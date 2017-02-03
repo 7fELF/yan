@@ -3585,7 +3585,7 @@ def parse_expr(v):
 
 
 class StyleChecker:
-    DEFAULT_TAB_WIDTH = 8
+    DEFAULT_TAB_WIDTH = 1
 
     def __init__(self, issue_handler):
         self._issue_handler = issue_handler
