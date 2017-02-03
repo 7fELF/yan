@@ -4315,8 +4315,6 @@ class IndentationChecker(StyleChecker):
         )
         indentor_classes = (
             CompoundExpr,
-            IfExpr,
-            WhileExpr,
         )
 
         if isinstance(expr, indented_classes):
