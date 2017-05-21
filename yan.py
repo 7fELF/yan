@@ -3738,6 +3738,7 @@ class StyleChecker:
 
         width = self.get_visible_indent_width(indent_string, position,
                                               visible_column)
+        """
         if width not in expected_widths:
             diff = expected_widths[0] - width
             msg = 'Bad indent level, expected {} {} space{}'.format(
@@ -3745,6 +3746,7 @@ class StyleChecker:
                 'more' if diff > 0 else 'fewer',
                 's' if abs(diff) > 1 else '')
             self.error(msg, position)
+        """
         return width
 
     def check_margin(self, source, left_token, margin, right_token):
