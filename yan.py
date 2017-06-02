@@ -3848,9 +3848,11 @@ class EmptyLineChecker(LineChecker):
 
     def check_line(self, begin, line, end):
         empty = len(line.strip()) == 0
+        '''
         if empty:
             if self._empty_previous_line:
                 self.error("Unexpected empty line", begin)
+        '''
         self._empty_previous_line = empty
 
     def check_source(self, source, source_tokens, pp_tokens, expr):
@@ -3867,14 +3869,18 @@ class EmptyLineInFunctionChecker(StyleChecker):
         for expr in expr_list:
             tokens += expr.tokens
         line = tokens[0].end.line
+        '''
         for token in tokens:
             if token.end.line > line + 1:
                 self.error('Unexpected empty line', token.begin)
             line = token.end.line
+        '''
 
     def _assert_no_line_between(self, a, b):
+      '''
         if a.end.line + 1 != b.begin.line:
             self.error('Unexpected empty line', b.begin)
+      '''
 
     def _check_compound(self, compound):
         if len(compound.declarations) > 0:
