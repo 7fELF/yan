@@ -1934,9 +1934,12 @@ def _get_system_header_types():
         'sys/select.h': 'fd_set',
         'termios.h':    'pid_t',
         'time.h':       stddef + ' clock_t time_t',
+        'sys/resource.h': '',
+        'sys/time.h':   '',
         'unistd.h':     stddef + ' ssize_t',
         'sys/stat.h':   '',
         'error.h':   '',
+        'math.h':   '',
         'sys/types.h':  sys_types,
     }
     return {h: types.split() for h, types in strings.items()}
